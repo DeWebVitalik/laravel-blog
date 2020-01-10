@@ -17,7 +17,7 @@ class CreatePostTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 200)->nullable(false);
             $table->text('content')->nullable(false);
-            $table->string('file', 200);
+            $table->string('file', 200)->nullable(true);
             $table->timestamps();
         });
     }
