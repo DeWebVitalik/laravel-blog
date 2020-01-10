@@ -21,19 +21,6 @@ class PostController extends Controller
     }
 
     /**
-     * @param int|null $category
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function category(int $category)
-    {
-        $category = Category::findOrFail($category);
-        return view('post.index', [
-            'category' => $category,
-            'posts' => $category->posts()->paginate(10)
-        ]);
-    }
-
-    /**
      * Displays a single Post model.
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

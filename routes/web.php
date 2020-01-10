@@ -10,11 +10,19 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 //Post routes
 Route::get('/posts', 'PostController@index');
 Route::get('/post/show/{id}', 'PostController@show');
-Route::get('/posts/category/{category}', 'PostController@category');
 Route::get('/post/add', 'PostController@add');
 Route::get('/post/update/{id}', 'PostController@update');
 Route::get('/post/delete/{id}', 'PostController@delete');
 Route::post('/post/save/{id?}', 'PostController@save');
+
+//Category routes
+Route::get('/category/{category}', 'CategoryController@posts');
+Route::get('/categories', 'CategoryController@index');
+Route::get('/category/add', 'CategoryController@add');
+Route::get('/category/update/{id}', 'CategoryController@update');
+Route::post('/category/save/{id?}', 'CategoryController@save');
+Route::get('/category/delete/{id}', 'CategoryController@delete');

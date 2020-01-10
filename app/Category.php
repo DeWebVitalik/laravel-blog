@@ -17,6 +17,14 @@ class Category extends Model
      * Get category posts
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['name', 'description'];
+
     public function posts()
     {
         return $this->hasMany('App\Post');
