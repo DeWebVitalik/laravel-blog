@@ -1,30 +1,7 @@
 @extends('layouts.layout')
 @section('content')
     <div class="row">
-        <aside class="col-md-3 blog-sidebar">
-            <div>
-                <h3 class="pb-3 mb-4 border-bottom">Categories</h3>
-                <ol class="list-unstyled mb-0">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                    <li><a href="#">January 2014</a></li>
-                    <li><a href="#">December 2013</a></li>
-                    <li><a href="#">November 2013</a></li>
-                    <li><a href="#">October 2013</a></li>
-                    <li><a href="#">September 2013</a></li>
-                    <li><a href="#">August 2013</a></li>
-                    <li><a href="#">July 2013</a></li>
-                    <li><a href="#">June 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                </ol>
-            </div>
-            <div class="p-3 mt-3 bg-light rounded">
-                <h4>Actions</h4>
-                <a class="btn btn-outline-primary" href="{{url('post/add')}}">Add post</a>
-                <a class="btn btn-outline-primary" href="{{url('category/add')}}">Add category</a>
-            </div>
-        </aside><!-- /.blog-sidebar -->
+        @include('layouts.sidebar')
         <div class="col-md-9 blog-main">
             <h3 class="pb-3 mb-4 border-bottom">
                 Posts
@@ -40,7 +17,9 @@
                                     </h5>
                                 </a>
                                 <p class="card-text">{{$post->content}}</p>
-                                <p class="card-text"><small class="text-muted">{{$post->created_at}}</small></p>
+                                <p class="card-text">
+                                    <small class="text-muted">{{$post->created_at}}</small>
+                                </p>
                             </div>
                         </div>
                     </div>

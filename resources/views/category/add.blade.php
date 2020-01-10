@@ -1,7 +1,10 @@
 @extends('layouts.layout')
 @section('content')
     <div class="row">
-        <div class="col-md-12 blog-main">
+        <div class="col-md-3">
+            @widget('Category')
+        </div>
+        <div class="col-md-9 blog-main">
             <h3 class="pb-3 mb-4 font-italic border-bottom">
                 Add new category
             </h3>
