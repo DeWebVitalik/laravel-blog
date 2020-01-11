@@ -39,7 +39,16 @@
             <nav class="blog-pagination">
                 {{$posts->links()}}
             </nav>
+            <div>
+                @include('comments.comment_form',[
+                    'action'=>route('addCategoryComment'),
+                    'categoryId'=>$category->id
+                ])
+                @include('comments.comments',[
+                    'comments'=>$comments,
+                    'category'=>$category
+                ])
+            </div>
         </div><!-- /.blog-main -->
     </div><!-- /.row -->
-
 @endsection

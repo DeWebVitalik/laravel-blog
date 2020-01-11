@@ -1,5 +1,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "node_modules/font-awesome/scss/font-awesome.scss";
 
 // Variables
 @import 'variables';
@@ -143,4 +144,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 .blog-footer p:last-child {
     margin-bottom: 0;
+}
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+    text-align: center;
+    padding-top: 14px;
+    padding-left: 2px;
+}
+
+.avatar i {
+    color: #6db1ea;
+    font-size: 20px;
+}
+
+.comment{
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #efefef;
+    border-radius: 5px;
+}
+
+.new-comment{
+    border-color: #d5e8f8;
 }

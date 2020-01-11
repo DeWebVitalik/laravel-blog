@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <title>Blog Template for Bootstrap</title>
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
 </head>

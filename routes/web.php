@@ -26,3 +26,6 @@ Route::get('/category/update/{id}', 'CategoryController@update');
 Route::post('/category/save/{id?}', 'CategoryController@save');
 Route::get('/category/delete/{id}', 'CategoryController@delete');
 Route::get('/category/{category}', 'CategoryController@posts')->name('showCategory');
+
+//Comment
+Route::post('/comment/category', 'CommentController@addCategoryComment')->name('addCategoryComment');
