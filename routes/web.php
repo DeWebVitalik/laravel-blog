@@ -29,3 +29,4 @@ Route::get('/category/{category}', 'CategoryController@posts')->name('showCatego
 
 //Comment
 Route::post('/comment/category', 'CommentController@addCategoryComment')->name('addCategoryComment');
+Route::post('/comment/post', 'CommentController@addPostComment')->name('addPostComment');

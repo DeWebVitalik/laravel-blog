@@ -1,3 +1,4 @@
+@inject('Comments', 'App\Widgets\Comments')
 <!-- Comments Form -->
 <div class="card my-4">
     <h5 class="card-header">Leave a Comment:</h5>
@@ -5,7 +6,7 @@
         <div class="alert alert-danger alert-comment" style="display:none"></div>
         <div class="alert alert-success alert-comment" style="display:none"></div>
         <form action="{{$action}}" method="post" id="category-comment-form">
-            <input type="hidden" name="category_id" value="{{$categoryId}}">
+            <input type="hidden" name="{{$type==$Comments::TYPE_POST ? 'post_id' : 'category_id'}}" value="{{$id}}">
             <div class="form-group">
                 <input type="text" name="author" class="form-control" placeholder="Enter you name and soname">
             </div>
@@ -19,7 +20,7 @@
 
 <script>
     window.onload = function () {
-        $('#category-comment-form').submit(function (e) {
+        jQuery('#category-comment-form').submit(function (e) {
             let $form = $(this);
             $.ajax({
                 url: $form.attr('action'),

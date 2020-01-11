@@ -1,0 +1,11 @@
+<div>
+    @include('widgets.comments.comment_form',[
+        'action'=>$config['action'],
+        'id'=>$config['id'],
+        'type'=>$config['type']
+    ])
+    @include('widgets.comments.comments',[
+        'comments'=>$comments,
+        'commentBoxName'=>$config['boxName']
+    ])
+</div>

@@ -27,10 +27,9 @@ class CategoryController extends Controller
     public function posts(int $category)
     {
         $category = Category::findOrFail($category);
-        return view('category.post', [
+        return view('category.posts', [
             'category' => $category,
             'posts' => $category->posts()->paginate(10),
-            'comments'=>$category->categoryComments
         ]);
     }
 

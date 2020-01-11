@@ -1,3 +1,4 @@
+@inject('Comments', 'App\Widgets\Comments')
 @extends('layouts.layout')
 @section('content')
     <div class="row">
@@ -39,16 +40,12 @@
             <nav class="blog-pagination">
                 {{$posts->links()}}
             </nav>
-            <div>
-                @include('comments.comment_form',[
-                    'action'=>route('addCategoryComment'),
-                    'categoryId'=>$category->id
-                ])
-                @include('comments.comments',[
-                    'comments'=>$comments,
-                    'category'=>$category
-                ])
-            </div>
+            @widget('Comments',[
+                'id'=>$category->id,
+                'boxName'=>$category->name,
+                'action'=>route('addCategoryComment'),
+                'type'=>$Comments::TYPE_CATEGORY
+            ])
         </div><!-- /.blog-main -->
     </div><!-- /.row -->
 @endsection

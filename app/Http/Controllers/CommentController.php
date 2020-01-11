@@ -3,14 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\CategoryComment;
-use Illuminate\Http\Request;
-use App\Http\Requests\CommentCategory as CommentCategoryRequest;
+use App\PostComment;
+use App\Http\Requests\CategoryComment as CategoryCommentRequest;
+use App\Http\Requests\PostComment as PostCommentRequest;
 
 class CommentController extends Controller
 {
-    public function addCategoryComment(CommentCategoryRequest $request)
+    /**
+     * Add CategoryComment model
+     *
+     * @param CategoryCommentRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addCategoryComment(CategoryCommentRequest $request)
     {
         CategoryComment::create($request->all());
+        return response()->json([
+            'success' => 'Comment is successfully added',
+            'comment' => $request->all(['author', 'content'])
+        ]);
+    }
+
+    /**
+     * Add PostCommentModel
+     *
+     * @param PostCommentRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function addPostComment(PostCommentRequest $request)
+    {
+        PostComment::create($request->all());
         return response()->json([
             'success' => 'Comment is successfully added',
             'comment' => $request->all(['author', 'content'])
