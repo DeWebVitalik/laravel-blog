@@ -14423,7 +14423,7 @@ a.text-dark:focus {
 
 .blog-header-logo {
   font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-size: 2.25rem;
+  font-size: 1.65em;
 }
 
 .blog-header-logo:hover {
@@ -14436,7 +14436,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-family: "Nunito", serif;
 }
 
 .display-4 {
@@ -14595,6 +14595,6 @@ h6 {
 }
 
 .new-comment {
-  background: #d5e8f8;
+  border-color: #d5e8f8;
 }
 

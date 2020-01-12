@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+  Add category
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('categoryAdd') }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-3">

@@ -4,7 +4,7 @@
     </div>
     <ul class="list-group list-group-flush">
         @forelse($categories as $category)
-            <li class="list-group-item"><a href="{{route('showCategory',$category->id)}}">{{$category->name}}</a></li>
+            <li class="list-group-item"><a href="{{route('categoryShow',$category->id)}}">{{$category->name}}</a></li>
         @empty
             <li class="list-group-item text-center">
                 Categories not found

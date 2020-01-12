@@ -1,4 +1,10 @@
 @inject('Comments', 'App\Widgets\Comments')
+@section('title')
+    Posts-{{$category->name}}
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('category',$category) }}
+@endsection
 @extends('layouts.layout')
 @section('content')
     <div class="row">

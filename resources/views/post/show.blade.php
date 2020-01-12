@@ -1,5 +1,11 @@
 @inject('Comments', 'App\Widgets\Comments')
 @extends('layouts.layout')
+@section('title')
+    Post: {{$post->name}}
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('post',$post) }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-9 blog-main">

@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+   Update: {{$category->name}}
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('categoryUpdate',$category) }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-12 blog-main">
@@ -25,7 +31,8 @@
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" name="description" id="description" rows="4">{{$category->description}}</textarea>
+                    <textarea class="form-control" name="description" id="description"
+                              rows="4">{{$category->description}}</textarea>
                 </div>
 
                 <button type="submit" class="btn btn-success float-right">Save</button>

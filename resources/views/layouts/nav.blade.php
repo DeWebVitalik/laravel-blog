@@ -1,16 +1,10 @@
-<div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-        <a class="p-2 text-muted" href="#">World</a>
-        <a class="p-2 text-muted" href="#">U.S.</a>
-        <a class="p-2 text-muted" href="#">Technology</a>
-        <a class="p-2 text-muted" href="#">Design</a>
-        <a class="p-2 text-muted" href="#">Culture</a>
-        <a class="p-2 text-muted" href="#">Business</a>
-        <a class="p-2 text-muted" href="#">Politics</a>
-        <a class="p-2 text-muted" href="#">Opinion</a>
-        <a class="p-2 text-muted" href="#">Science</a>
-        <a class="p-2 text-muted" href="#">Health</a>
-        <a class="p-2 text-muted" href="#">Style</a>
-        <a class="p-2 text-muted" href="#">Travel</a>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <div class="my-0 mr-md-auto font-weight-normal blog-header-logo">Blog<sup>Laravel</sup></div>
+    <nav class="my-2 my-md-0 mr-md-3">
+        <a class="p-2 text-dark" href="#"><i class="fa fa-th-list" aria-hidden="true"></i> Posts</a>
+        <a class="p-2 text-dark" href="#"><i class="fa fa-tags" aria-hidden="true"></i> Categories</a>
+        <a class="p-2 text-dark" href="#"><i class="fa fa-github" aria-hidden="true"></i> Github</a>
     </nav>
+    <a class="btn btn-outline-primary mr-3" href="#">Add category</a>
+    <a class="btn btn-outline-primary" href="#">Add post</a>
 </div>

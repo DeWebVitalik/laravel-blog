@@ -7,15 +7,13 @@
     <meta name="author" content="">
     <link rel="icon" href="/favicon.ico">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>Blog Template for Bootstrap</title>
+    <title>@yield('title')</title>
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-    @include('layouts.header')
-    @include('layouts.nav')
-</div>
+@include('layouts.nav')
 <main role="main" class="container">
+    @yield('breadcrumbs')
     @include('flash::message')
     @yield('content')
 </main><!-- /.container -->

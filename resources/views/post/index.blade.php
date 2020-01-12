@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+  Home | Blog
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('home') }}
+@endsection
 @section('content')
     <div class="row">
         @include('layouts.sidebar')

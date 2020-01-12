@@ -1,4 +1,10 @@
 @extends('layouts.layout')
+@section('title')
+    Update: {{$post->name}}
+@endsection
+@section('breadcrumbs')
+    {{ Breadcrumbs::render('postUpdate',$post) }}
+@endsection
 @section('content')
     <div class="row">
         <div class="col-md-12 blog-main">
