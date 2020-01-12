@@ -16,7 +16,7 @@ class PostComment extends FormRequest
     public function rules()
     {
         return [
-            'author' => 'required|max:200',
+            'author' => 'required|max:200|regex:/(^[A-Z]{1}[a-z]{1,20} [A-Z]{1}[a-z]{1,20}$)/',
             'content' => 'required',
             'post_id' => 'required',
         ];

@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-   Add post
+    Add post
 @endsection
 @section('breadcrumbs')
     {{ Breadcrumbs::render('postAdd') }}

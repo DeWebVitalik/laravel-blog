@@ -10,6 +10,8 @@ use App\Http\Requests\Post as PostRequest;
 class PostController extends Controller
 {
     /**
+     * Displays all Post model
+     *
      * @param int|null $category
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -22,6 +24,7 @@ class PostController extends Controller
 
     /**
      * Displays a single Post model.
+     *
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -32,7 +35,8 @@ class PostController extends Controller
     }
 
     /**
-     * Returns a view with a posting add form.
+     * Displays a view with a posting add form.
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add()
@@ -42,7 +46,8 @@ class PostController extends Controller
     }
 
     /**
-     * Returns a view with a posting update form.
+     * Displays a view with a posting update form.
+     *
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -58,6 +63,7 @@ class PostController extends Controller
 
     /**
      * Deletes the Post model.
+     *
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -74,6 +80,7 @@ class PostController extends Controller
 
     /**
      * Creates a new Post model or updates the Post model.
+     *
      * @param PostRequest $request
      * @param int|null $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -111,6 +118,7 @@ class PostController extends Controller
 
     /**
      * Downloads the file and returns the filename
+     *
      * @param $request
      * @return string
      */

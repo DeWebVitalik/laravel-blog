@@ -22,6 +22,7 @@ class Category extends Model
 
     /**
      * Get category posts
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function posts()
@@ -30,10 +31,11 @@ class Category extends Model
     }
 
     /**
-     * Get category comment
+     * Get category comments
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function categoryComments()
+    public function comments()
     {
         return $this->hasMany('App\CategoryComment','category_id','id');
     }

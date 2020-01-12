@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 @section('title')
-   Update: {{$category->name}}
+    Update: {{$category->name}}
 @endsection
 @section('breadcrumbs')
     {{ Breadcrumbs::render('categoryUpdate',$category) }}
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{route('categoryUpdate', $category->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('categorySave', $category->id)}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 <div class="form-group">

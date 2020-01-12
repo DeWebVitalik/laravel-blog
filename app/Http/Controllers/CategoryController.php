@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\Category as CategoryRequest;
 
 class CategoryController extends Controller
 {
     /**
-     * Lists all Category models.
+     * Displays all Category models.
+     *
      * @param int|null $category
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -21,6 +21,8 @@ class CategoryController extends Controller
     }
 
     /**
+     * Displays all posts from set category
+     *
      * @param int|null $category
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -34,7 +36,8 @@ class CategoryController extends Controller
     }
 
     /**
-     * Returns a view with a category add form.
+     * Displays a view with a category add form.
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function add()
@@ -43,7 +46,8 @@ class CategoryController extends Controller
     }
 
     /**
-     * Returns a view with a category update form.
+     * Displays a view with a category update form.
+     *
      * @param int $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -55,6 +59,7 @@ class CategoryController extends Controller
 
     /**
      * Deletes the Category model.
+     *
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -72,6 +77,7 @@ class CategoryController extends Controller
 
     /**
      * Creates a new Category model or updates the Category model.
+     *
      * @param PostRequest $request
      * @param int|null $id
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -79,10 +85,10 @@ class CategoryController extends Controller
     public function save(CategoryRequest $request, int $id = null)
     {
         $category = new Category();
-        $redirectUrl = 'category/add';
+        $redirectUrl = route('categoryAdd');
         if ($id) {
             $category = Category::findOrFail($id);
-            $redirectUrl = 'category/update/' . $id;
+            $redirectUrl = route('categoryUpdate', $id);
         }
         $category->fill([
             'name' => $request->name,

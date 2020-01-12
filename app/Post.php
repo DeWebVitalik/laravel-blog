@@ -50,6 +50,7 @@ class Post extends Model
 
     /**
      * Format created_at
+     *
      * @param $value
      * @return mixed
      */

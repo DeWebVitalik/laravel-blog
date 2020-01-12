@@ -11,7 +11,7 @@
             @widget('Category')
         </div>
         <div class="col-md-9 blog-main">
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
+            <h3 class="pb-3 mb-4 border-bottom">
                 Update post: {{$post->name}}
             </h3>
             @if ($errors->any())
