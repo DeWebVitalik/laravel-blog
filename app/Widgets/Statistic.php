@@ -2,6 +2,7 @@
 
 namespace App\Widgets;
 
+use App\Services\BrowserService;
 use Illuminate\Support\Facades\DB;
 use Arrilot\Widgets\AbstractWidget;
 use App\Statistic as StatisticModel;
@@ -21,9 +22,9 @@ class Statistic extends AbstractWidget
      */
     public function run()
     {
-        $browser = $_SERVER["HTTP_USER_AGENT"];
-        $ip = !empty($_SERVER['HTTP_CLIENT_IP']) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : false;
-
+        $browser = new BrowserService();
+        $browser = $browser->getBrowser();
+        $ip = $_SERVER['REMOTE_ADDR'];
 
         if ($this->checkUser($ip) && $ip) {
             $this->addStatistic($ip, $browser);
