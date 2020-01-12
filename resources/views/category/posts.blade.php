@@ -13,44 +13,32 @@
             <h3 class="pb-3 mb-4 border-bottom">
                 {{$category->name}}
             </h3>
-            <p>
+            <p style="font-size: 16px">
                 {{$category->description}}
             </p>
             <div class="blog-pagination text-right">
-                <a class="btn btn-outline-primary" href="{{url('category/update/'.$category->id)}}">Update</a>
-                <a class="btn btn-outline-danger" href="{{url('category/delete/'.$category->id)}}">Delete</a>
+                <a class="btn btn-outline-primary" href="{{route('categoryUpdate', $category->id)}}">Update</a>
+                <a class="btn btn-outline-danger" href="{{route('categoryDelete', $category->id)}}">Delete</a>
             </div>
             <div class="row mb-2">
                 @forelse($posts as $post)
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <a class="text-dark" href="{{url('post/show/'.$post->id)}}">
-                                    <h5 class="card-title">
-                                        {{$post->name}}
-                                    </h5>
-                                </a>
-                                <p class="card-text">{{$post->content}}</p>
-                                <p class="card-text">
-                                    <small class="text-muted">{{$post->created_at}}</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @include('layouts.post',compact('post'))
                 @empty
-                    <h3 class="pb-3 mb-4border-bottom">
-                        Posts not found
-                    </h3>
+                    <div class="col-md-12 text-center">
+                        <h3 class="pb-3 mb-4border-bottom">
+                            Posts not found
+                        </h3>
+                    </div>
                 @endforelse
             </div>
             <nav class="blog-pagination">
                 {{$posts->links()}}
             </nav>
             @widget('Comments',[
-                'id'=>$category->id,
-                'boxName'=>$category->name,
-                'action'=>route('addCategoryComment'),
-                'type'=>$Comments::TYPE_CATEGORY
+            'id'=>$category->id,
+            'boxName'=>$category->name,
+            'action'=>route('addCategoryComment'),
+            'type'=>$Comments::TYPE_CATEGORY
             ])
         </div><!-- /.blog-main -->
     </div><!-- /.row -->

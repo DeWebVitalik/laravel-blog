@@ -14,19 +14,26 @@
             </h3>
 
             <div class="blog-post">
-                <p class="blog-post-meta"> {{$post->created_at}}</p>
-                {{$post->content}}
+                <p class="blog-post-meta"><i class="fa fa-calendar" aria-hidden="true"></i> {{$post->date}}</p>
+                <p>
+                    {!!$post->content!!}
+                </p>
             </div><!-- /.blog-post -->
 
             <nav class="blog-pagination">
-                <a class="btn btn-outline-primary" href="{{url('post/update/'.$post->id)}}">Update</a>
-                <a class="btn btn-outline-danger" href="{{url('post/delete/'.$post->id)}}">Delete</a>
+                @if($post->file)
+                    <a class="btn btn-outline-primary" href="/userfile/{{$post->file}}"><i class="fa fa-paperclip"
+                                                                                           aria-hidden="true"></i> {{$post->file}}
+                    </a>
+                @endif
+                <a class="btn btn-outline-primary" href="{{route('postUpdate', $post->id)}}">Update</a>
+                <a class="btn btn-outline-danger" href="{{route('postDelete', $post->id)}}">Delete</a>
             </nav>
             @widget('Comments',[
-                'id'=>$post->id,
-                'boxName'=>$post->name,
-                'action'=>route('addPostComment'),
-                'type'=>$Comments::TYPE_POST
+            'id'=>$post->id,
+            'boxName'=>$post->name,
+            'action'=>route('addPostComment'),
+            'type'=>$Comments::TYPE_POST
             ])
         </div>
         @include('layouts.sidebar')

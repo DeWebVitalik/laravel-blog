@@ -16,12 +16,11 @@ class CategoryComment extends FormRequest
     public function rules()
     {
         return [
-            'author' => 'required|max:200',
+            'author' => 'required|max:200|regex:/(^[A-Z]{1}[a-z]{1,20} [A-Z]{1}[a-z]{1,20}$)/',
             'content' => 'required',
             'category_id' => 'required',
         ];
     }
-
     /**
      * @param Validator $validator
      */
@@ -29,4 +28,5 @@ class CategoryComment extends FormRequest
     {
         throw new HttpResponseException(response()->json($validator->errors(), 422));
     }
+
 }

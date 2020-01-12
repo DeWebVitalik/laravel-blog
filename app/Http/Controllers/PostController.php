@@ -69,7 +69,7 @@ class PostController extends Controller
             flash('Error deleting post!')->error();
         }
 
-        return redirect('posts');
+        return redirect(route('home'));
     }
 
     /**

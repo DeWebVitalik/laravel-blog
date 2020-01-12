@@ -11,7 +11,7 @@
             @widget('Category')
         </div>
         <div class="col-md-9 blog-main">
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
+            <h3 class="pb-3 mb-4 border-bottom">
                 Add new category
             </h3>
             @if ($errors->any())
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{url('category/save')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('categorySave')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">Name</label>

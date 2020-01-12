@@ -21,13 +21,13 @@ class AddFkeyAndPkey extends Migration
 
         Schema::table('post_comment', function (Blueprint $table) {
             $table->bigInteger('post_id')->unsigned();
-            $table->foreign('post_id')->references('id')->on('post');
+            $table->foreign('post_id')->references('id')->on('post')->onDelete('cascade');
             $table->index(['post_id']);
         });
 
         Schema::table('category_comment', function (Blueprint $table) {
             $table->bigInteger('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('category');
+            $table->foreign('category_id')->references('id')->on('category')->onDelete('cascade');
             $table->index(['category_id']);
         });
     }

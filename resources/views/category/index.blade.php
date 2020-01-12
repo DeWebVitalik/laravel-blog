@@ -12,15 +12,17 @@
                 Categories
             </h3>
             <div class="row mb-2">
-                <ul>
-                    @forelse($categories as $category)
-                        <li><a href="{{url('category/'.$category->id)}}">{{$category->name}}</a></li>
-                    @empty
-                        <h3 class="pb-3 mb-4border-bottom">
-                            Categories not found
-                        </h3>
-                    @endforelse
-                </ul>
+                <div class="col-md-12">
+                    <ul class="list-unstyled">
+                        @forelse($categories as $category)
+                            <li><a href="{{route('categoryShow',$category->id)}}">{{$category->name}}</a></li>
+                        @empty
+                            <h3 class="pb-3 mb-4border-bottom">
+                                Categories not found
+                            </h3>
+                        @endforelse
+                    </ul>
+                </div>
             </div>
             <nav class="blog-pagination">
                 {{$categories->links()}}

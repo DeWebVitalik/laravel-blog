@@ -11,7 +11,7 @@
             @widget('Category')
         </div>
         <div class="col-md-9 blog-main">
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
+            <h3 class="pb-3 mb-4 border-bottom">
                 Add new post
             </h3>
             @if ($errors->any())
@@ -23,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{url('post/save')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('postSave')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <div class="row">
                     <div class="col-md-6">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                     <label for="content">Content</label>
-                    <textarea class="form-control" name="content" id="content" rows="4"></textarea>
+                    <textarea name="content" id="add-post-content"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="file">Attach file</label>

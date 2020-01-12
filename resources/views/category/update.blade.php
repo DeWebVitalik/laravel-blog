@@ -7,8 +7,11 @@
 @endsection
 @section('content')
     <div class="row">
-        <div class="col-md-12 blog-main">
-            <h3 class="pb-3 mb-4 font-italic border-bottom">
+        <div class="col-md-3">
+            @widget('Category')
+        </div>
+        <div class="col-md-9 blog-main">
+            <h3 class="pb-3 mb-4 border-bottom">
                 Update category: {{$category->name}}
             </h3>
             @if ($errors->any())
@@ -20,7 +23,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{url('category/save/'.$category->id)}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('categoryUpdate', $category->id)}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 <div class="form-group">

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Services\PostService;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -18,7 +19,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','content','category_id','file'];
+    protected $fillable = ['name', 'content', 'category_id', 'file'];
 
     /**
      * Get the post category
@@ -29,4 +30,32 @@ class Post extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    /**
+     * Get short content
+     */
+    public function getLittleContentAttribute()
+    {
+        return PostService::getLittleContent($this->content,200);
+    }
+
+    /**
+     * Returns true if the file is an image
+     *
+     * @return bool
+     */
+    public function getFileImageAttribute(){
+        return PostService::fileIsImage($this->file);
+    }
+
+    /**
+     * Format created_at
+     * @param $value
+     * @return mixed
+     */
+    public function getDateAttribute()
+    {
+        return $this->created_at->format('d/m/y H:i');
+    }
+
 }

@@ -60,13 +60,14 @@ class CategoryController extends Controller
      */
     public function delete(int $id)
     {
-        if (Category::findOrFail($id)->delete()) {
+        try {
+            Category::findOrFail($id)->delete();
             flash('Category successfully deleted!')->success();
-        } else {
-            flash('Error deleting category!')->error();
+            return redirect(route('categories'));
+        } catch (\Illuminate\Database\QueryException $e) {
+            flash('Category is used!')->warning();
+            return redirect(route('categoryShow', $id));
         }
-
-        return redirect('categories');
     }
 
     /**

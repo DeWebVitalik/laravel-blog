@@ -14416,6 +14416,10 @@ a.text-dark:focus {
 
 /* main style */
 
+main {
+  min-height: 450px;
+}
+
 .blog-header {
   line-height: 1;
   border-bottom: 1px solid #e5e5e5;
@@ -14560,6 +14564,7 @@ h6 {
  */
 
 .blog-footer {
+  margin-top: 20px;
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
@@ -14588,7 +14593,7 @@ h6 {
 }
 
 .comment {
-  padding: 5px;
+  padding: 10px;
   background: #fff;
   border: 1px solid #efefef;
   border-radius: 5px;
@@ -14596,5 +14601,10 @@ h6 {
 
 .new-comment {
   border-color: #d5e8f8;
+}
+
+.post-image {
+  min-width: 250px;
+  overflow-x: hidden;
 }
 

@@ -54,6 +54,8 @@
                     $('html').animate({scrollTop: destination}, 1100);
                 },
                 error: function (res) {
+                    //clear error text
+                    jQuery('.alert-danger').text('');
                     //hide success alert
                     jQuery('.alert-success').hide(200);
                     //show errors
